@@ -1,0 +1,7 @@
+---
+- name: Pull docker image of the Calculator
+  hosts: all
+  tasks:
+    - name: pull docker image
+      shell: docker pull anmolbisht/calculator_devops
+
