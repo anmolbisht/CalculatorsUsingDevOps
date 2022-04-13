@@ -3,5 +3,8 @@
   hosts: all
   tasks:
     - name: pull docker image
-      shell: docker pull anmolbisht/calculator_devops
+      docker_image:
+        name: anmolbisht/calculator_devops
+        source: pull
+#       shell: docker pull anmolbisht/calculator_devops
 
