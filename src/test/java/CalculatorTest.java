@@ -54,6 +54,19 @@ public class CalculatorTest {
         assertNotEquals("Finding square root for False Positive", 0, calculator.sqroot(4), DELTA);
 
     }
+    
+    
+    @Test
+    public void mulTruePositive(){
+        assertEquals("Finding multiplication for True Positive", 6, calculator.mul(2, 3), DELTA);
+        assertEquals("Finding multiplication for True Positive", 12, calculator.mul(4, 3), DELTA);
+    }
+
+    @Test
+    public void mulFalsePositive(){
+        assertNotEquals("Finding multiplication for False Positive", 6, calculator.mul(2, 2), DELTA);
+        assertNotEquals("Finding multiplication for False Positive", 6, calculator.mul(2, -3), DELTA);
+    }
 
 
 }
