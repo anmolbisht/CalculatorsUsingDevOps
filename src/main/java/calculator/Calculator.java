@@ -18,8 +18,8 @@ public class Calculator {
         double number1, number2;
         do {
             System.out.println("Scientific Calculator using DevOps. \n Choose operation:");
-            System.out.print("1. Factorial\n2. Square root\n3. Power\n4. Natural Logarithm\n" +
-                    "5. Exit\nEnter your choice: ");
+            System.out.print("1. Factorial\n2. Square root\n3. Power\n4. Natural Logarithm\n5. Multiplication\n" +
+                    "6. Exit\nEnter your choice: ");
             int choice;
             try {
                 choice = scanner.nextInt();
@@ -62,6 +62,16 @@ public class Calculator {
                     System.out.println("\n");
 
                     break;
+                    
+                case 5:
+                    // Multiplication
+                    System.out.print("Enter the first number : ");
+                    number1 = scanner.nextDouble();
+                    System.out.print("Enter the second number : ");
+                    number2 = scanner.nextDouble();
+                    System.out.println(number1+ " multiplied "+number2+" is : " + calculator.mul(number1, number2));
+                    System.out.println("\n");
+                    break;    
                 default:
                     System.out.println("Exiting....");
                     return;
@@ -91,6 +101,14 @@ public class Calculator {
         logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
         double result = Math.pow(number1,number2);
         logger.info("[RESULT - POWER] - " + result);
+        return result;
+    }
+    
+    
+    public double mul(double number1, double number2) {
+        logger.info("MULTIPLICATION - " + number1 + " AND " + number2);
+        double result = number1*number2;
+        logger.info("[RESULT - MULTIPLICATION] - " + result);
         return result;
     }
 
